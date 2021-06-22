@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('./partials/header') %>
+
+<h1>All Flights</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Aiport</th>
+        <th>Flight Number</th>
+        <th>Departure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Write the line of EJS to iterate over flights using forEach -->
+      <% flights.forEach(function(f) { %>
+        <tr>
+          <td><%= f.airline %></td>
+          <td><%= f.airport %></td>
+          <td><%= f.flightNo %></td>
+          <td><%= f.departs %></td>
+          
+    <% }); %>
+    </tbody>
+  </table>
+
+<%- include('./partials/footer') %>
