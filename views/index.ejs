@@ -1,26 +1,5 @@
 <%- include('./partials/header') %>
 
-<h1>All Flights</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Airline</th>
-        <th>Aiport</th>
-        <th>Flight Number</th>
-        <th>Departure</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Write the line of EJS to iterate over flights using forEach -->
-      <% flights.forEach(function(f) { %>
-        <tr>
-          <td><%= f.airline %></td>
-          <td><%= f.airport %></td>
-          <td><%= f.flightNo %></td>
-          <td><%= f.departs %></td>
-          
-    <% }); %>
-    </tbody>
-  </table>
+<h1>Welcome to Mongoose flights</h1>
 
 <%- include('./partials/footer') %>

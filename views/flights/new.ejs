@@ -1,15 +1,20 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a New Movie</h2>
+<h2>Enter a New Flight</h2>
 <form action="/flights" method="POST">
   <label>Airline:
-    <input type="text" name="airline">
+    <select name="airline">
+      <!-- // Southwest', 'United', 'American -->
+      <option value="Southwest">Southwest</option>
+      <option value="United">United</option>
+      <option value="American" selected>American</option>
+    </select>
   </label><br>
-  <label>Airport
+  <label>Airport:
     <select name="airport">
       <option value="AUS">AUS</option>
       <option value="DFW">DFW</option>
-      <option value="DEN">DEN</option>
+      <option value="DEN" selected>DEN</option>
       <option value="LAX">LAX</option>
       <option value="SAN">SAN</option>
     </select>
@@ -19,8 +24,11 @@
   </label><br>
   <label for="departs">Departure:</label>
     <input type="datetime-local" id="departs"
-       name="departure" value="2021-06-21T00:00"
-       min="2021-06-21T00:00" max="2022-06-21T00:00">
+       name="departure" value= <%= function () {
+        return new Date().getFullYear();
+      } %>
+       min: max:
+     }
   </label><br>
   <input type="submit" value="Add Flight">
 </form>
