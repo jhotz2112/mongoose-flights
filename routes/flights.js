@@ -10,7 +10,5 @@ router.get('/new', flightsCtrl.new);
 router.post('/', flightsCtrl.create);
 // GET /:id
 router.get('/:id', flightsCtrl.show);
-// Route U
-router.get('/:id/edit', flightsCtrl.edit);
 
 module.exports = router;

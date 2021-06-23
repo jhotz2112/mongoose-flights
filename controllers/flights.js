@@ -4,15 +4,8 @@ module.exports = {
     new: newFlight,
     create,
     index,
-    show,
-    edit
+    show
 };
-
-function edit(req, res) {
-    const flight = Flight.findById(req.params.id, function(err, flight) {
-        res.render('flights/edit', { title: 'Flight Details', flight});
-    });
-}
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
