@@ -51,14 +51,38 @@
         <% } else { %>
             <h3>Non Stop Flight</h3>
             <% } %>
-            <h2>Tickets</h2>
-            <form action="/flights/<%= flight._id %>/tickets/new" method="POST">
-              <label>Seat:
-            </label>
-            <input name="seat" required pattern="[A-F][1-9]\d?">
-            <label>Price:
-            </label>            
-            <input name="price">
-            <button type="submit">Add Ticket</button>
-              </form>    
+                <h2>Tickets</h2>
+                <form action="/flights/<%= flight._id %>/tickets" method="POST">
+                    <label>Seat:
+                    </label>
+                    <input name="seat" required pattern="[A-F][1-9]\d?">
+                    <label>Price:
+                    </label>
+                    <input name="price">
+                    <button type="submit">Add Ticket</button>
+                </form>
+                <% if (tickets.length) { %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Seat</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% tickets.forEach(function(t) { %>
+                                <tr>
+                                    <td>
+                                        <%= t.seat %>
+                                    </td>
+                                    <td>
+                                        <%= t.price %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <h3>No tickets left</h3>
+                        <% } %>
                 <%- include('../partials/footer') %>
